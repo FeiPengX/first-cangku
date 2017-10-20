@@ -3,3 +3,6 @@ git init   创建git仓库
 git add 添加
 
 git commit 提交仓库
+
+
+add
