@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#da{
+				width: 100%;
+				height: 662px;
+				}
+			#max{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: relative;
+			}
+			#mox{
+				width: 100px;
+				height: 100px;
+				background: deeppink;
+				position: relative;
+				top: 250px;
+				left: 950px;
+			}
+			#moo{
+				width: 100px;
+				height: 100px;
+				background: deeppink;
+				position: relative;
+				top: 250px;
+				left: 400px;
+			}
+			#ooo{
+				width: 100px;
+				height: 100px;
+				background: deeppink;
+				position: relative;
+				top: -150px;
+				left: 500px;
+			}
+			@-webkit-keyframes move{
+			0%{-webkit-transform: rotateZ(0deg);}
+			100%{-webkit-transform: rotateZ(360deg);}
+		</style>
+	</head>
+	<body>
+		<audio autoplay="autoplay" loop="loop">
+			<source src="刀郎 - 西海情歌.mp3"></source>
+		</audio>
+		<div id="da">
+			<div id="max"></div>
+			<div id="mox"></div>
+			<div id="moo"></div>
+			<div id="ooo"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	
+		window.onload=function(){
+			var max=document.getElementById("max")
+			var da=document.getElementById("da")
+			time=setInterval(fan,20)
+			var a=5;
+			var b=5;
+			function fan(){
+				if(max.offsetLeft>da.offsetWidth-max.offsetWidth||max.offsetLeft<0){
+					a=-a;
+				}
+				if(max.offsetTop>da.offsetHeight-max.offsetWidth||max.offsetTop<0){
+					b=-b;
+					da.style.background=ann();
+				}
+			max.style.left=max.offsetLeft+a+"px"
+			max.style.top=max.offsetTop+b+"px";
+			diaoyong()
+		}
+		function diaoyong(){
+		var maxleft=max.offsetLeft;
+		var maxtop=max.offsetTop;
+		var maxright=max.offsetLeft+max.offsetWidth;
+		var maxbottom=max.offsetTop+max.offsetHeight;
+		
+		var moxleft=mox.offsetLeft;
+		var moxtop=mox.offsetTop;
+		var moxright=mox.offsetLeft+max.offsetWidth;
+		var moxbottom=mox.offsetTop+max.offsetHeight;
+		
+		var mooleft=moo.offsetLeft;
+		var mootop=moo.offsetTop;
+		var mooright=moo.offsetLeft+max.offsetWidth;
+		var moobottom=moo.offsetTop+max.offsetHeight;
+		
+		var oooleft=ooo.offsetLeft;
+		var oootop=ooo.offsetTop;
+		var oooright=ooo.offsetLeft+max.offsetWidth;
+		var ooobottom=ooo.offsetTop+max.offsetHeight;
+		
+		if(maxleft>moxright||maxtop>moxbottom||maxright<moxleft||maxbottom<moxtop){
+			max.innerText="你在作死？";
+			mox.style.background="cyan";
+			mox.innerText="来呀,造作呀！";
+			//mox.style.width="100px"
+			//mox.style.height="100px"
+			mox.style.WebkitAnimation=null;
+			max.style.WebkitAnimation=null;
+		}else{
+			max.innerText="呦呵，有点意思！";
+			mox.style.background="yellow";
+			mox.innerText="超级爽，再来过";
+			mox.style.textAlign="center";
+			mox.style.fontSize="30px";
+			mox.style.lineHeight="30px";
+			//mox.style.width="250px"
+			//mox.style.height="250px"
+			mox.style.color="orange";
+			mox.style.WebkitAnimation="move 0.1s linear infinite";
+			max.style.WebkitAnimation="move 0.1s linear infinite";
+			//max.style.display="none";
+			mox.style.WebkitTransition=" all 5s linear";
+			
+			}
+		
+		if(maxleft>mooright||maxtop>moobottom||maxright<mooleft||maxbottom<mootop){
+			max.innerText="你在作死？";
+			moo.style.background="red";
+			moo.innerText="来呀,造作呀！";
+			//moo.style.width="100px"
+			//moo.style.height="100px"
+			moo.style.WebkitAnimation=null;
+			max.style.WebkitAnimation=null;
+		}else{
+			max.innerText="呦呵，有点意思！";
+			moo.style.background="pink";
+			moo.innerText="超级爽，再来过";
+			moo.style.textAlign="center";
+			moo.style.fontSize="30px";
+			moo.style.lineHeight="30px";
+			//moo.style.width="250px"
+			//moo.style.height="250px"
+			moo.style.color="orange";
+			moo.style.WebkitAnimation="move 0.1s linear infinite";
+			max.style.WebkitAnimation="move 0.1s linear infinite";
+			//max.style.display="none";
+			moo.style.WebkitTransition=" all 5s linear";
+			
+			}
+		if(maxleft>oooright||maxtop>ooobottom||maxright<oooleft||maxbottom<oootop){
+			max.innerText="你在作死？";
+			ooo.style.background="red";
+			ooo.innerText="来呀,造作呀！";
+			//ooo.style.width="100px"
+			//ooo.style.height="100px"
+			ooo.style.WebkitAnimation=null;
+			max.style.WebkitAnimation=null;
+		}else{
+			max.innerText="呦呵，有点意思！";
+			ooo.style.background="pink";
+			ooo.innerText="超级爽，再来过";
+			ooo.style.textAlign="center";
+			ooo.style.fontSize="30px";
+			ooo.style.lineHeight="30px";
+		//	ooo.style.width="250px"
+		//	ooo.style.height="250px"
+			ooo.style.color="orange";
+			ooo.style.WebkitAnimation="move 0.1s linear infinite";
+			max.style.WebkitAnimation="move 0.1s linear infinite";
+			//max.style.display="none";
+			ooo.style.WebkitTransition=" all 5s linear";
+			
+				}
+			}
+		}
+		function ann(){
+				var n=parseInt(Math.random()*255);
+				var b=parseInt(Math.random()*255);
+				var c=parseInt(Math.random()*255);
+			return 'rgb('+n+','+b+','+c+')'
+		}
+	</script>
+</html>
